@@ -1,4 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 import(mlr)
 import(data.table)
-import(mlrHyperopt)
+#import(mlrHyperopt)
