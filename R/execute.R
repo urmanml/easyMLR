@@ -1,0 +1,17 @@
+execute<-function(dataset,target)
+{
+  missingValueImputation
+  outlierTreatment
+  featureEngineering
+  featureNormalization
+  createTask
+  createLearnerList
+  featureSelection
+  tuningFunction
+  benchmark
+  analyseThresholdVsPerformance
+  selectLearner
+  train
+  predict
+  performance
+}

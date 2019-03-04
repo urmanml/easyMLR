@@ -2,10 +2,12 @@
 % Please edit documentation in R/paramSet.R
 \name{paramSet}
 \alias{paramSet}
-\title{Paramset Function}
+\title{Search space for Hyperparameters
+Currently supports major learning algorithms}
 \usage{
 paramSet(lrn)
 }
 \description{
-Paramset Function
+Search space for Hyperparameters
+Currently supports major learning algorithms
 }

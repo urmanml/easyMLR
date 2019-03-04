@@ -1,4 +1,5 @@
 exportPattern("^[[:alpha:]]+")
 import(mlr)
 import(data.table)
+import(FSelector)
 #import(mlrHyperopt)
