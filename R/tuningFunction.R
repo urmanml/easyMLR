@@ -24,7 +24,7 @@ tuningFunction<-function(lrn,task)
   #gscontrol <- makeTuneControlGrid(resolution = 1)
   gscontrol<-makeTuneControlRandom(maxit = 2,tune.threshold = logical(1))
   #4) hypertune the parameters
-  stune <- tuneParams(learner = lrn, resampling = rdesc, task = task, par.set = gs, control = gscontrol, measures = tpr)
+  stune <- tuneParams(learner = lrn, resampling = rdesc, task = task, par.set = gs, control = gscontrol, measures = c(tpr,f1))
 
   #5) using hyperparameters for modeling
   lrn <- setHyperPars(lrn, par.vals = stune$x)
