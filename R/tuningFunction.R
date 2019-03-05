@@ -1,20 +1,25 @@
 #' hyperparameter tuning function
 tuningFunction<-function(lrn,task)
 {
+
   #set 3 fold cross validation
   rdesc <- makeResampleDesc("CV",iters = 3L)
   #1) Search for hyperparameters
-  #param_set<-getParamSet("classif.rpart")
+  param_set<-getParamSet(lrn)
   #2) Make param set
-  #uncomment this for manually setting the parameters in the paramSet function
-  #gs <- paramSet(lrns[[2]])
+  #option a)uncomment this for manually setting the parameters in the paramSet function
+
+  gs <- paramSet(lrn)
   #class(gs)
-  gs<- mlrHyperopt::generateParConfig(lrn)
-  class(gs)
-  gs<-gs$par.set
-  class(gs)
-  #gc<-  generateParConfig("classif.svm")
-  #gc$par.set
+
+  ##option b: using mlrhyperopt
+  #gs<- mlrHyperopt::generateParConfig(lrn)$par.set
+
+  ##option c: using CaretParamset
+  #gs<-getCaretParamSet(lrn$short.name,task = task)$par.set
+
+
+  gs
   #3) Specify to do a grid search/vs a random search
   #gscontrol <- makeTuneControlGrid(resolution = 1)
   gscontrol<-makeTuneControlRandom(maxit = 2,tune.threshold = logical(1))
