@@ -7,12 +7,12 @@ End to End Machine Learning Framework in simple English language. It is created 
 
 It has all the components required for end to end Machine Learning workflow-
 1)	Data Preparation-
-  a)	Reading the dataset
-  b)	Missing value imputation
-  c)	Outlier Treatment
-  d)	Feature Engineering
-  e)	Feature Selection
-  f)	Removing Class imbalance
+a)	Reading the dataset
+b)	Missing value imputation
+c)	Outlier Treatment
+d)	Feature Engineering
+e)	Feature Selection
+f)	Removing Class imbalance
 
 2)	Deciding Learning Algorithm
   a)	Hyperparameter Tuning: By calling a simple function, it can tune set of relevant hyperparameters using crossvalidation
