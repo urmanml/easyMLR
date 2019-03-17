@@ -55,7 +55,7 @@ Sample Code
 ```
 library(easymlr)
 ```
-0) Load data
+Load data
 ```
 dataset<-read.csv("loan_data.csv")
 colnames<-colnames(dataset)
@@ -63,14 +63,14 @@ target<-colnames[2]
 ```
 
 
-1) Data Preprocessing 
+Data Preprocessing 
 ```
 dataset<-missingValueImputation(dataset,target)
 dataset<-outlierTreatment(dataset,target)
 dataset<-featureEngineering(dataset)
 dataset<-featureNormalization(dataset,target)
 ```
-1b) Specify problem type here-"classif","regr","cluster"
+Specify problem type here-"classif","regr","cluster"
 ```
 task<-createTask(dataset,target,type = "classif")
 lrns<-createLearnerList(task$type)
@@ -78,21 +78,21 @@ lrns<-createLearnerList(task$type)
 task<-treatClassImbalance(task)
 lrns<-tuneLearners(lrns,task)
 ```
-2a) Benchmark Algorithms using Cross Validation
+Benchmark Algorithms using Cross Validation
 ```
 bmr<-benchmarkExperiment(lrns,task)
 analyseThresholdVsPerformance(bmr)
 ```
-2b) Analyze output and select an Algorithm
+Analyze output and select an Algorithm
 ```
 lrn<-selectLearner(lrns,name = "gbm")
 ```
-3) Model Training and Prediction
+Model Training and Prediction
 ```
 mod<-train(lrn,task = task)
 pred<-prediction(mod,task,.29)
 ```
-4) Performance Evaluation
+Performance Evaluation
 ```
 easymlr::performance(pred)
 ```
