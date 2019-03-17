@@ -9,8 +9,8 @@ It has following benefits-
 
 ## Components:
 It has all the components required for end to end Machine Learning workflow-
-### 1)	Data Preparation-
-  
+
+##### 1)	Data Preparation-
   a)	Reading the dataset
   b)	Missing value imputation
   c)	Outlier Treatment
@@ -18,18 +18,17 @@ It has all the components required for end to end Machine Learning workflow-
   e)	Feature Selection
   f)	Removing Class imbalance
 
-2)	Deciding Learning Algorithm
+##### 2)	Deciding Learning Algorithm
   a)	Hyperparameter Tuning: By calling a simple function, it can tune set of relevant hyperparameters using crossvalidation
   b)	Benchmamrking: It can benchmark different learning algorithms to pick the best algorithm for the dataset as per a supplied metric
   c)	Analyze performance vs  Thresholds: Generating graph of the model performance for different values of thresholds for different learning algorithms to select best learning algorithm and the threshold in case of Classification Problems
 
-3)	Model Training and Prediction
+##### 3)	Model Training and Prediction
   a)	Model Training
   b)	Prediction using trained model	
 
-4)	Model Evaluation
+##### 4)	Model Evaluation
   a)	Performance evaluation: Generate summary of model performance as per different metrics like accuracy, precision, recall
-
 
 ## Installing
 ```
