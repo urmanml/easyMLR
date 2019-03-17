@@ -1,13 +1,13 @@
 # easyMLR
 End to End Machine Learning Framework in simple English language. It is created using a high level abstraction layer over Popular MLR package. 
 
-Benefits:
+## Benefits:
 It has following benefits-
 1)	Faster time to development 
 2)	A standard framework for solving machine Learning problems-
 3)	Low learning curve. Even a business person having no knowledge of Machine Learning can implement and solve a Machine Learning problem in less than a less than two hours
 
-Components:
+## Components:
 It has all the components required for end to end Machine Learning workflow-
 1)	Data Preparation-
   a)	Reading the dataset
