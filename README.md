@@ -7,28 +7,42 @@ It has following benefits-
 2)	A standard framework for solving machine Learning problems-
 3)	Low learning curve. Even a business person having no knowledge of Machine Learning can implement and solve a Machine Learning problem in less than a less than two hours
 
-## Components:
+Components:
+-----------
+
 It has all the components required for end to end Machine Learning workflow-
 
-##### 1)	Data Preparation-
-  a)	Reading the dataset
-  b)	Missing value imputation
-  c)	Outlier Treatment
-  d)	Feature Engineering
-  e)	Feature Selection
-  f)	Removing Class imbalance
+##### 1) Data Preparation-
 
-##### 2)	Deciding Learning Algorithm
-  a)	Hyperparameter Tuning: By calling a simple function, it can tune set of relevant hyperparameters using crossvalidation
-  b)	Benchmamrking: It can benchmark different learning algorithms to pick the best algorithm for the dataset as per a supplied metric
-  c)	Analyze performance vs  Thresholds: Generating graph of the model performance for different values of thresholds for different learning algorithms to select best learning algorithm and the threshold in case of Classification Problems
+1.  Reading the dataset
 
-##### 3)	Model Training and Prediction
-  a)	Model Training
-  b)	Prediction using trained model	
+2.  Missing value imputation
 
-##### 4)	Model Evaluation
-  a)	Performance evaluation: Generate summary of model performance as per different metrics like accuracy, precision, recall
+3.  Outlier Treatment
+
+4.  Feature Engineering
+
+5.  Feature Selection
+
+6.  Removing Class imbalance
+
+##### 2) Deciding Learning Algorithm
+
+1.  Hyperparameter Tuning: By calling a simple function, it can tune set of relevant hyperparameters using crossvalidation
+
+2.  Benchmamrking: It can benchmark different learning algorithms to pick the best algorithm for the dataset as per a supplied metric
+
+3.  Analyze performance vs  Thresholds: Generating graph of the model performance for different values of thresholds for different learning algorithms to select best learning algorithm and the threshold in case of Classification Problems
+
+##### 3) Model Training and Prediction
+
+1.  Model Training
+
+2.  Prediction using trained model  
+
+##### 4) Model Evaluation
+
+1.  Performance evaluation: Generate summary of model performance as per different metrics like accuracy, precision, recall
 
 ## Installing
 ```
