@@ -64,3 +64,44 @@ pred<-prediction(mod,task,.29)
 ####4) Performance Evaluation
 easymlr::performance(pred)
 #--------------------------------------
+
+
+
+
+
+source("mlr2.R")
+source("dependencies.R")
+library(easymlr)
+
+####0) Load data
+dataset<-read.csv("loan_data.csv")
+colnames<-colnames(dataset)
+target<-colnames[2]
+
+####1) Data Preprocessing 
+dataset<-missingValueImputation(dataset,target)
+dataset<-outlierTreatment(dataset,target)
+dataset<-featureEngineering(dataset)
+dataset<-featureNormalization(dataset,target)
+
+####1b) Specify problem type here-"classif","regr","cluster"
+task<-createTask(dataset,target,type = "classif")
+lrns<-createLearnerList(task$type)
+#task<-featureSelection(task)
+task<-treatClassImbalance(task)
+lrns<-tuneLearners(lrns,task)
+
+####2a) Benchmark Algorithms using Cross Validation
+bmr<-benchmarkExperiment(lrns,task)
+analyseThresholdVsPerformance(bmr)
+
+####2b) Analyse output and select an Algorithm
+lrn<-selectLearner(lrns,name = "gbm")
+
+####3) Model Training and Prediction
+mod<-train(lrn,task = task)
+pred<-prediction(mod,task,.29)
+
+####4) Performance Evaluation
+easymlr::performance(pred)
+
