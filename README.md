@@ -1,13 +1,13 @@
 # easyMLR
 End to End Machine Learning Framework in simple English language. It is created using a high level abstraction layer over Popular MLR package. 
 
-##Benefits:
+Benefits:
 It has following benefits-
 1)	Faster time to development 
 2)	A standard framework for solving machine Learning problems-
 3)	Low learning curve. Even a business person having no knowledge of Machine Learning can implement and solve a Machine Learning problem in less than a less than two hours
 
-##Components:
+Components:
 It has all the components required for end to end Machine Learning workflow-
 1)	Data Preparation-
   a)	Reading the dataset
@@ -41,22 +41,22 @@ Sample Code
 ```
 library(easymlr)
 ```
-####0) Load data
+0) Load data
 ```
 dataset<-read.csv("loan_data.csv")
 colnames<-colnames(dataset)
 target<-colnames[2]
 ```
-#--------------------------------------
+
+
+1) Data Preprocessing 
 ```
-####1) Data Preprocessing 
 dataset<-missingValueImputation(dataset,target)
 dataset<-outlierTreatment(dataset,target)
 dataset<-featureEngineering(dataset)
 dataset<-featureNormalization(dataset,target)
 ```
-#--------------------------------------
-####1b) Specify problem type here-"classif","regr","cluster"
+1b) Specify problem type here-"classif","regr","cluster"
 ```
 task<-createTask(dataset,target,type = "classif")
 lrns<-createLearnerList(task$type)
@@ -64,65 +64,21 @@ lrns<-createLearnerList(task$type)
 task<-treatClassImbalance(task)
 lrns<-tuneLearners(lrns,task)
 ```
-#--------------------------------------
-####2a) Benchmark Algorithms using Cross Validation
+2a) Benchmark Algorithms using Cross Validation
 ```
 bmr<-benchmarkExperiment(lrns,task)
 analyseThresholdVsPerformance(bmr)
 ```
-#--------------------------------------
-####2b) Analyse output and select an Algorithm
+2b) Analyse output and select an Algorithm
 ```
 lrn<-selectLearner(lrns,name = "gbm")
 ```
-#--------------------------------------
-####3) Model Training and Prediction
+3) Model Training and Prediction
 ```
 mod<-train(lrn,task = task)
 pred<-prediction(mod,task,.29)
 ```
-#--------------------------------------
-####4) Performance Evaluation
+4) Performance Evaluation
 ```
 easymlr::performance(pred)
 ```
-#--------------------------------------
-
-
-
-
-source("mlr2.R")
-source("dependencies.R")
-library(easymlr)
-
-####0) Load data
-dataset<-read.csv("loan_data.csv")
-colnames<-colnames(dataset)
-target<-colnames[2]
-
-####1) Data Preprocessing 
-dataset<-missingValueImputation(dataset,target)
-dataset<-outlierTreatment(dataset,target)
-dataset<-featureEngineering(dataset)
-dataset<-featureNormalization(dataset,target)
-
-####1b) Specify problem type here-"classif","regr","cluster"
-task<-createTask(dataset,target,type = "classif")
-lrns<-createLearnerList(task$type)
-#task<-featureSelection(task)
-task<-treatClassImbalance(task)
-lrns<-tuneLearners(lrns,task)
-
-####2a) Benchmark Algorithms using Cross Validation
-bmr<-benchmarkExperiment(lrns,task)
-analyseThresholdVsPerformance(bmr)
-
-####2b) Analyse output and select an Algorithm
-lrn<-selectLearner(lrns,name = "gbm")
-
-####3) Model Training and Prediction
-mod<-train(lrn,task = task)
-pred<-prediction(mod,task,.29)
-
-####4) Performance Evaluation
-easymlr::performance(pred)
