@@ -9,7 +9,8 @@ It has following benefits-
 
 ## Components:
 It has all the components required for end to end Machine Learning workflow-
-1)	Data Preparation-
+### 1)	Data Preparation-
+  
   a)	Reading the dataset
   b)	Missing value imputation
   c)	Outlier Treatment
@@ -30,7 +31,7 @@ It has all the components required for end to end Machine Learning workflow-
   a)	Performance evaluation: Generate summary of model performance as per different metrics like accuracy, precision, recall
 
 
-Installing
+## Installing
 ```
 install.packages("devtools")
 library(devtools)
@@ -69,7 +70,7 @@ lrns<-tuneLearners(lrns,task)
 bmr<-benchmarkExperiment(lrns,task)
 analyseThresholdVsPerformance(bmr)
 ```
-2b) Analyse output and select an Algorithm
+2b) Analyze output and select an Algorithm
 ```
 lrn<-selectLearner(lrns,name = "gbm")
 ```
